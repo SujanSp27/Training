@@ -5,13 +5,13 @@
 #define TAX_RATE 0.10 // 10% tax
 #define TIP_RATE 0.15 // 15% tip
 
-// Global arrays to store order data
-char orderItems[MAX_ITEMS][20];  // Stores item names
-float orderPrices[MAX_ITEMS];    // Stores item prices
-int orderQuantities[MAX_ITEMS];  // Stores item quantities
-int itemCount = 0;               // Number of items ordered
 
-// Function prototypes
+char orderItems[MAX_ITEMS][20];  
+float orderPrices[MAX_ITEMS];   
+int orderQuantities[MAX_ITEMS]; 
+int itemCount = 0;              
+
+
 void displayMenu();
 void addItem();
 void displayBill();
@@ -48,7 +48,6 @@ int main() {
     return 0;
 }
 
-// Function to display the menu
 void displayMenu() {
     printf("\nMenu:\n");
     printf("1. Add Item to Order\n");
@@ -56,7 +55,7 @@ void displayMenu() {
     printf("3. Exit\n");
 }
 
-// Function to add an item to the order
+
 void addItem() {
     int choice, quantity;
     if (itemCount >= MAX_ITEMS) {
@@ -97,7 +96,6 @@ void addItem() {
     printf("Item added to order!\n");
 }
 
-// Function to display the bill
 void displayBill() {
     int i;
     float subtotal, tax, tip, total;
@@ -128,7 +126,7 @@ void displayBill() {
     printf("Total Bill: $%.2f\n", total);
 }
 
-// Function to calculate subtotal
+
 float calculateSubtotal() {
     int i;
     float subtotal = 0;
@@ -140,17 +138,16 @@ float calculateSubtotal() {
     return subtotal;
 }
 
-// Function to calculate tax
+
 float calculateTax(float subtotal) {
     return subtotal * TAX_RATE;
 }
 
-// Function to calculate tip
+
 float calculateTip(float subtotal) {
     return subtotal * TIP_RATE;
 }
 
-// Function to calculate total bill
 float calculateTotal(float subtotal, float tax, float tip) {
     return subtotal + tax + tip;
 }
