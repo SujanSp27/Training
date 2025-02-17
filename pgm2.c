@@ -3,13 +3,12 @@
 
 #define MAX_ITEMS 100
 
-// Global arrays to store cart data
-char cartItems[MAX_ITEMS][20]; // Stores item names
-float cartPrices[MAX_ITEMS];    // Stores item prices
-int cartQuantities[MAX_ITEMS];  // Stores item quantities
-int itemCount = 0;              // Number of items in the cart
+char cartItems[MAX_ITEMS][20]; 
+float cartPrices[MAX_ITEMS];    
+int cartQuantities[MAX_ITEMS];  
+int itemCount = 0;              
 
-// Function prototypes
+
 void displayMenu();
 void addItem();
 void removeItem();
@@ -51,7 +50,6 @@ int main() {
     return 0;
 }
 
-// Function to display the menu
 void displayMenu() {
     printf("\nMenu:\n");
     printf("1. Add Item to Cart\n");
@@ -61,7 +59,7 @@ void displayMenu() {
     printf("5. Checkout and Exit\n");
 }
 
-// Function to add an item to the cart
+
 void addItem() {
     int choice, quantity;
     if (itemCount >= MAX_ITEMS) {
@@ -102,7 +100,6 @@ void addItem() {
     printf("Item added to cart!\n");
 }
 
-// Function to remove an item from the cart
 void removeItem() {
     int index, i;
     displayCart();
@@ -127,7 +124,7 @@ void removeItem() {
     printf("Item removed from cart!\n");
 }
 
-// Function to update the quantity of an item in the cart
+
 void updateItem() {
     int index, quantity;
     displayCart();
@@ -149,7 +146,7 @@ void updateItem() {
     printf("Item quantity updated!\n");
 }
 
-// Function to display the cart contents
+
 void displayCart() {
     int i;
     float total;
@@ -168,7 +165,6 @@ void displayCart() {
     printf("Total Cost: $%.2f\n", total);
 }
 
-// Function to calculate the total cost of the cart
 float calculateTotal() {
     int i;
     float total = 0;
