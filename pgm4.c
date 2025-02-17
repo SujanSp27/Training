@@ -4,14 +4,12 @@
 
 #define MAX_TRANSACTIONS 100
 
-// Global Variables
 float balance = 1000.0;
 int transactionCount = 0;
 char transactionType[MAX_TRANSACTIONS][15];
 float transactionAmount[MAX_TRANSACTIONS];
 char transactionDate[MAX_TRANSACTIONS][20];
 
-// Function Prototypes
 void deposit();
 void withdraw();
 void checkBalance();
@@ -56,7 +54,6 @@ int main() {
     return 0;
 }
 
-// Function to Deposit Money
 void deposit() {
     float amount;
     printf("\nEnter the amount to deposit: $");
@@ -72,7 +69,6 @@ void deposit() {
     printf("Amount deposited successfully!\n");
 }
 
-// Function to Withdraw Money
 void withdraw() {
     float amount;
     printf("\nEnter the amount to withdraw: $");
@@ -93,12 +89,10 @@ void withdraw() {
     printf("Amount withdrawn successfully!\n");
 }
 
-// Function to Check Balance
 void checkBalance() {
     printf("\nCurrent Account Balance: $%.2f\n", balance);
 }
 
-// Function to View Transaction History
 void viewHistory() {
     printf("\nTransaction History:\n");
     if (transactionCount == 0) {
@@ -114,13 +108,10 @@ void viewHistory() {
     }
 }
 
-// Function to Record Transaction
 void recordTransaction(const char* type, float amount) {
     if (transactionCount < MAX_TRANSACTIONS) {
         strcpy(transactionType[transactionCount], type);
         transactionAmount[transactionCount] = amount;
-
-        // Get Current Date and Time
         time_t now = time(NULL);
         struct tm *t = localtime(&now);
         strftime(transactionDate[transactionCount], sizeof(transactionDate[transactionCount]), "%Y-%m-%d %H:%M:%S", t);
