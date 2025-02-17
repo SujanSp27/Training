@@ -14,7 +14,7 @@ int main() {
     printf("4. Drink - $3\n");
     printf("5. Finish Order\n");
 
-    // Loop to take orders
+   
     while (1) {
         printf("\nEnter your choice (1-5): ");
         scanf("%d", &choice);
@@ -26,7 +26,7 @@ int main() {
         printf("Enter quantity: ");
         scanf("%d", &quantity);
 
-        // Calculate subtotal based on choice
+        
         switch (choice) {
             case 1:
                 subtotal += 15 * quantity;
@@ -45,8 +45,8 @@ int main() {
         }
     }
 
-    // Display order summary
-    tax = subtotal * 0.1;  // 10% tax
+ 
+    tax = subtotal * 0.1;  
     total = subtotal + tax;
 
     printf("\nOrder Summary:\n");
@@ -54,7 +54,7 @@ int main() {
     printf("Tax (10%%): $%.2f\n", tax);
     printf("Total: $%.2f\n", total);
 
-    // Confirm and process payment
+  
     printf("\nDo you want to confirm the order? (y/n): ");
     scanf(" %c", &confirm);
 
@@ -72,7 +72,7 @@ int main() {
         printf("Order canceled.\n");
     }
 
-    // Update order status
+    
     if (orderPlaced) {
         printf("Order Status: Paid\n");
     } else {
